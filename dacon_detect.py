@@ -130,21 +130,6 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
     }
 
     for path, img, im0s, vid_cap in dataset:
-        results['file_name'].append(path.split('/')[-1].split('.')[0] + '.json')
-        #
-        # bestConf = 0.0
-        #
-        # class_id = None
-        # confidence = None
-        # point1_x = None
-        # point1_y = None
-        # point2_x = None
-        # point2_y = None
-        # point3_x = None
-        # point3_y = None
-        # point4_x = None
-        # point4_y = None
-
         if onnx:
             img = img.astype('float32')
         else:
@@ -217,6 +202,7 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
                 # Write results
 
                 for *xyxy, conf, cls in reversed(det):
+                    results['file_name'].append(path.split('/')[-1].split('.')[0] + '.json')
                     class_id = int(cls + 1)
                     confidence = float(conf)
                     point1_x = float(xyxy[0])
