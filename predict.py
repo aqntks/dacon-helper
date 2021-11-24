@@ -22,6 +22,7 @@ cfg.MODEL.ROI_HEADS.NUM_CLASSES = 4
 cfg.MODEL.WEIGHTS = "weights/weight1/model_0014999.pt"
 cfg.TEST.DETECTIONS_PER_IMAGE = 1000
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5
+cfg.MODEL.ROI_HEADS.NMS_THRESH_TEST = 0.5
 
 predictor = DefaultPredictor(cfg)
 
@@ -31,4 +32,7 @@ for fn in dir:
     im = cv2.imread("./test_img/" + fn)
     pred = predictor(im)
 
-    print(pred)
+    pred_class = torch.mode(pred['instances'].pred_classes)[0]
+    pred_box = pred['instances'].cpu().numpy()
+
+    print(pred_box)
