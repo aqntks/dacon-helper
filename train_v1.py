@@ -94,7 +94,7 @@ class Trainer(DefaultTrainer):
 
 def setup():
     dataDir = Path('./')
-    model_name = "Misc/cascade_mask_rcnn_X_152_32x8d_FPN_IN5k_gn_dconv.yaml"
+    model_name = "COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml"
 
     cfg = get_cfg()
     cfg.INPUT.MASK_FORMAT = 'bitmask'

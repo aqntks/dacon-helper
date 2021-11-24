@@ -6,9 +6,12 @@ import seaborn as sb
 # csv = pd.read_csv("C:\\Users\\home\\Desktop\\csv\\yolov5x320tta.csv")
 csv = pd.read_csv("C:\\Users\\home\\Desktop\\csv\\tta1130.csv")
 
-csv = csv[csv["confidence"] >= 0.3247]
+# csv = csv[csv["confidence"] >= 0.3247]
 
-print(csv.describe())
+print(csv[csv["class_id"] == 1]["confidence"].describe())
+print(csv[csv["class_id"] == 2]["confidence"].describe())
+print(csv[csv["class_id"] == 3]["confidence"].describe())
+print(csv[csv["class_id"] == 4]["confidence"].describe())
 
 
 print(csv[csv["class_id"] == 1]["confidence"].count() / csv["confidence"].count() * 100)
