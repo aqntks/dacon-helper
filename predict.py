@@ -19,7 +19,7 @@ cfg = get_cfg()
 cfg.merge_from_file(model_zoo.get_config_file("COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml"))
 cfg.INPUT.MASK_FORMAT='bitmask'
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 4
-cfg.MODEL.WEIGHTS = "weights/weight1/model_0014999.pt"
+cfg.MODEL.WEIGHTS = "weights/weight1/model_0014999.pth"
 cfg.TEST.DETECTIONS_PER_IMAGE = 1000
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5
 cfg.MODEL.ROI_HEADS.NMS_THRESH_TEST = 0.5
