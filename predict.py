@@ -33,6 +33,7 @@ for fn in dir:
     pred = predictor(im)
 
     pred_class = torch.mode(pred['instances'].pred_classes)[0]
-    pred_box = pred['instances'].cpu().numpy()
+    take = pred['instances'].scores >= 0.25
+    pred_boxes = pred['instances'].pred_boxes[take]
 
-    print(pred_box)
+    print(pred_boxes)
