@@ -66,6 +66,8 @@ for fn in dir:
         results['point4_x'].append(point4_x)
         results['point4_y'].append(point4_y)
 
+        print(f"cls: {class_id}")
+        print(f"conf: {confidence}")
 
 submission = pd.DataFrame(results)
 submission.to_csv('baseline.csv', index=False)
