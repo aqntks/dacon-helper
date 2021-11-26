@@ -63,6 +63,7 @@ for fn in dir:
         results['point2_y'].append(point2_y)
         results['point3_x'].append(point3_x)
         results['point3_y'].append(point3_y)
+
         results['point4_x'].append(point4_x)
         results['point4_y'].append(point4_y)
 

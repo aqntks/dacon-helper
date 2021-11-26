@@ -12,7 +12,7 @@ import scipy
 from joblib import Parallel , delayed
 
 
-IMG_SIZE = 256
+IMG_SIZE = 320
 base_path = Path('../dacon')
 train_path = list((base_path /'train').glob('train*'))
 test_path = list((base_path / 'test').glob('test*'))
@@ -100,12 +100,38 @@ from sklearn.model_selection import train_test_split
 # 학습 이미지가 많은 관계로 10000개만 사용
 images_path = list(new_image_path.glob('*'))
 
-train_path_list,valid_path_list = train_test_split(images_path,test_size=0.1,random_state=42)
+train_path_list1,valid_path_list1 = train_test_split(images_path,test_size=0.1,random_state=3)
+train_path_list2,valid_path_list2 = train_test_split(images_path,test_size=0.1,random_state=27)
+train_path_list3,valid_path_list3 = train_test_split(images_path,test_size=0.1,random_state=42)
+train_path_list4,valid_path_list4 = train_test_split(images_path,test_size=0.1,random_state=85)
+train_path_list5,valid_path_list5 = train_test_split(images_path,test_size=0.1,random_state=99)
+
 
 with open('train_dataset.txt', 'w') as f:
-    f.writelines([f'{i}\n' for i in train_path_list])
+    f.writelines([f'{i}\n' for i in train_path_list1])
 with open('valid_dataset.txt', 'w') as f:
-    f.writelines([f'{i}\n ' for i in valid_path_list])
+    f.writelines([f'{i}\n ' for i in valid_path_list1])
+
+with open('train_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n' for i in train_path_list2])
+with open('valid_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n ' for i in valid_path_list2])
+
+with open('train_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n' for i in train_path_list3])
+with open('valid_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n ' for i in valid_path_list3])
+
+with open('train_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n' for i in train_path_list4])
+with open('valid_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n ' for i in valid_path_list4])
+
+with open('train_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n' for i in train_path_list5])
+with open('valid_dataset.txt', 'w') as f:
+    f.writelines([f'{i}\n ' for i in valid_path_list5])
+
 
 
 # Create .yaml file
