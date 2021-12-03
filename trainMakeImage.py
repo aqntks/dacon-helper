@@ -97,14 +97,15 @@ for i in tmp[n]:
 plt.imshow(sample)
 
 from sklearn.model_selection import train_test_split
+
 # 학습 이미지가 많은 관계로 10000개만 사용
 images_path = list(new_image_path.glob('*'))
 
 train_path_list1,valid_path_list1 = train_test_split(images_path,test_size=0.1,random_state=3)
 train_path_list2,valid_path_list2 = train_test_split(images_path,test_size=0.1,random_state=27)
 train_path_list3,valid_path_list3 = train_test_split(images_path,test_size=0.1,random_state=42)
-train_path_list4,valid_path_list4 = train_test_split(images_path,test_size=0.1,random_state=85)
-train_path_list5,valid_path_list5 = train_test_split(images_path,test_size=0.1,random_state=99)
+train_path_list4,valid_path_list4 = train_test_split(images_path,test_size=0.2,random_state=85)
+train_path_list5,valid_path_list5 = train_test_split(images_path,test_size=0.2,random_state=99)
 
 
 with open('train_dataset.txt', 'w') as f:
