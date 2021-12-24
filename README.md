@@ -1,4 +1,5 @@
 # Dacon 병변 검출 AI 경진대회
+## Dacon Capsule endoscopy small intestine lesion detection AI Competition
 
 대회 개요
 
