@@ -16,8 +16,8 @@
 ## 최종 순위 14위 / 439팀 - Top 3%
 ![](finish.png)
 
-사용 프레임워크 및 라이브러리 : Pytorch, Detectron2, monai
-테스트 모델 : Yolov5, YoloX, YoloR, Swin Transformer, Faster R-CNN, Mask R-CNN
-데이터 분할 : K-fold CrossValidation (5 fold splits)
-데이터 증강 : mosaic, flip, scale, copy_paste
-추론 : TTA(Test Time Augmentation) 진행
+- 사용 프레임워크 및 라이브러리 : Pytorch, Detectron2, monai
+- 테스트 모델 : Yolov5, YoloX, YoloR, Swin Transformer, Faster R-CNN, Mask R-CNN
+- 데이터 분할 : K-fold CrossValidation (5 fold splits)
+- 데이터 증강 : mosaic, flip, scale, copy_paste
+- 추론 : TTA(Test Time Augmentation) 진행
